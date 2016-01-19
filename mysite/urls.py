@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-	url(r'^polls/', include('polls.urls')),
+	# regular expressions for the include() functions don’t have a $ (end-of-string match character) but rather a trailing slash.
+	url(r'^polls/', include('polls.urls', namespace='polls')),
 ]
